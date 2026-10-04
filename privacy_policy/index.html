@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - Battu AI</title>
+  <meta name="description" content="Privacy Policy for Battu AI - On-Device Autonomous Mascot Assistant.">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+      background-attachment: fixed;
+      color: #0f172a;
+      line-height: 1.65;
+      padding: clamp(20px, 3vw, 40px) clamp(16px, 3vw, 32px);
+      min-height: 100vh;
+      width: 100%;
+    }
+
+    .bg-glow-1 {
+      position: fixed;
+      top: -120px;
+      right: -120px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+      border-radius: 50%;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .bg-glow-2 {
+      position: fixed;
+      bottom: -150px;
+      left: -150px;
+      width: 550px;
+      height: 550px;
+      background: radial-gradient(circle, rgba(15, 23, 42, 0.06) 0%, rgba(255, 255, 255, 0) 70%);
+      border-radius: 50%;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .wrapper {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .doc-header {
+      margin-bottom: 28px;
+    }
+
+    .doc-header h1 {
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #0f172a;
+      margin-bottom: 10px;
+    }
+
+    .doc-header p {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: #475569;
+      margin-bottom: 14px;
+    }
+
+    .meta-date {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #2563eb;
+      background: rgba(37, 99, 235, 0.08);
+      padding: 4px 12px;
+      border-radius: 20px;
+      border: 1px solid rgba(37, 99, 235, 0.2);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: 18px;
+      padding: clamp(20px, 3vw, 36px);
+      box-shadow: 0 12px 32px -8px rgba(15, 23, 42, 0.06), 0 0 1px rgba(0, 0, 0, 0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.1);
+      border-color: rgba(37, 99, 235, 0.3);
+    }
+
+    .highlight-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+
+    .highlight-card p {
+      font-size: 0.95rem;
+      color: #475569;
+    }
+
+    .section {
+      margin-bottom: 36px;
+    }
+
+    .section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section h2 {
+      font-size: clamp(1.2rem, 3vw, 1.4rem);
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+      letter-spacing: -0.01em;
+    }
+
+    .section p {
+      font-size: 1rem;
+      color: #334155;
+      margin-bottom: 14px;
+    }
+
+    .section ul {
+      margin-left: 20px;
+      margin-bottom: 14px;
+      color: #334155;
+    }
+
+    .section li {
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+
+    .code-tag {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.85rem;
+      background: rgba(15, 23, 42, 0.05);
+      color: #0f172a;
+      padding: 2px 8px;
+      border-radius: 6px;
+      border: 1px solid rgba(15, 23, 42, 0.1);
+    }
+
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      margin: 16px 0;
+      border-radius: 12px;
+      border: 1px solid rgba(226, 232, 240, 0.8);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.925rem;
+      background: rgba(255, 255, 255, 0.6);
+    }
+
+    th, td {
+      padding: 14px 18px;
+      text-align: left;
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+    }
+
+    th {
+      background: rgba(248, 250, 252, 0.9);
+      color: #0f172a;
+      font-weight: 700;
+    }
+
+    td {
+      color: #334155;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: #1d4ed8;
+    }
+
+    footer {
+      margin-top: 48px;
+      text-align: center;
+      font-size: 0.875rem;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-glow-1"></div>
+  <div class="bg-glow-2"></div>
+
+  <div class="wrapper">
+
+    <div class="doc-header">
+      <h1>Privacy Policy</h1>
+      <p>This policy details how Battu AI processes data strictly on your device using local machine learning models.</p>
+      <div class="meta-date">Last Updated: October 4, 2026</div>
+    </div>
+
+    <div class="highlights-grid">
+      <div class="glass-card highlight-card">
+        <h3>100% Local Inference</h3>
+        <p>Executed locally via Google AI Edge LiteRT-LM framework. Your conversations remain on your hardware.</p>
+      </div>
+      <div class="glass-card highlight-card">
+        <h3>On-Device Vision</h3>
+        <p>Image, text, face, and object recognition are performed offline using Google MLKit.</p>
+      </div>
+      <div class="glass-card highlight-card">
+        <h3>Zero Account Tracking</h3>
+        <p>No user accounts, server logs, or cloud user profiles exist on our infrastructure.</p>
+      </div>
+    </div>
+
+    <div class="glass-card">
+
+      <div class="section">
+        <h2>1. Architectural Overview</h2>
+        <p>Battu AI (<span class="code-tag">battu.ai</span>) is built on an on-device architecture. Artificial intelligence reasoning (powered by Google Gemma 4 E2B model weights) is executed locally on your device hardware through the <strong>Google AI Edge LiteRT-LM SDK</strong>. Your input prompts, conversation history, and voice inputs are never transmitted to external cloud AI servers for inference.</p>
+      </div>
+
+      <div class="section">
+        <h2>2. Data Processed Locally on Your Device</h2>
+        <p>The following data types are stored and processed strictly within your smartphone's isolated local storage:</p>
+        <ul>
+          <li><strong>Chat History & Memory:</strong> User queries, AI assistant responses, and customized personality parameters are retained locally.</li>
+          <li><strong>Audio & Speech Data:</strong> Microphone access (<span class="code-tag">RECORD_AUDIO</span>) is converted into text locally. Raw audio recordings are not stored or transmitted.</li>
+          <li><strong>Camera & Photo Inputs:</strong> Photos captured via the in-app camera (<span class="code-tag">CAMERA</span>) are processed on-device via Google MLKit models for optical character recognition (OCR), face detection, and object labeling.</li>
+          <li><strong>On-Screen Context:</strong> Optional Accessibility (<span class="code-tag">BIND_ACCESSIBILITY_SERVICE</span>) and Notification Listener services (<span class="code-tag">BIND_NOTIFICATION_LISTENER_SERVICE</span>) analyze screen content locally upon explicit user request.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>3. Third-Party Services & Network Operations</h2>
+        <p>Network connectivity (<span class="code-tag">INTERNET</span>) is utilized strictly for two distinct functions:</p>
+        <ul>
+          <li><strong>Stage 2 Live Web Search:</strong> When requested by the user, real-time web search queries are transmitted to web search providers to return current information. Search queries do not contain personal identifiers.</li>
+          <li><strong>Google AdMob Advertising Framework:</strong> The application incorporates Google AdMob (<span class="code-tag">com.google.android.gms:play-services-ads</span>) to serve advertisements.</li>
+        </ul>
+
+        <p><strong>Ad Formats & Ad Personalization:</strong> Google AdMob serves banner advertisements, full-screen interstitial advertisements, rewarded video advertisements, and native advertisements. Google AdMob and its advertising partners may collect device identifiers (such as the Google Advertising ID), IP addresses, location data, and app telemetry to personalize ads, measure campaign performance, and prevent fraud.</p>
+        <p>For detailed information on Google's advertising practices, please visit <a href="https://policies.google.com/technologies/ads" target="_blank">Google Advertising & Privacy Terms</a> and <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a>. You can manage or reset your Advertising ID via Android Settings: <strong>Settings &gt; Google &gt; Ads &gt; Reset Advertising ID</strong>.</p>
+      </div>
+
+      <div class="section">
+        <h2>4. Application System Permissions</h2>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Permission</th>
+                <th>Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="code-tag">RECORD_AUDIO</span></td>
+                <td>Converts voice input into text for local AI processing.</td>
+              </tr>
+              <tr>
+                <td><span class="code-tag">CAMERA</span></td>
+                <td>Captures photos for local computer vision analysis.</td>
+              </tr>
+              <tr>
+                <td><span class="code-tag">FOREGROUND_SERVICE</span></td>
+                <td>Maintains the persistent mascot overlay and status bar notification.</td>
+              </tr>
+              <tr>
+                <td><span class="code-tag">MANAGE_EXTERNAL_STORAGE</span></td>
+                <td>Stores local AI model files, user drawings, and configurations.</td>
+              </tr>
+              <tr>
+                <td><span class="code-tag">BIND_ACCESSIBILITY_SERVICE</span></td>
+                <td>Optional service enabling automated assistant screen interactions.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>5. Data Retention & User Control</h2>
+        <p>Because all data resides exclusively on your device, you maintain full authority over data retention. You may erase all application data at any time by navigating to <strong>Android Settings &gt; Apps &gt; Battu AI &gt; Storage &gt; Clear Storage</strong>, or by uninstalling the application.</p>
+      </div>
+
+      <div class="section">
+        <h2>6. Children's Privacy</h2>
+        <p>Battu AI does not knowingly collect or solicit information from children under the age of 13. Since no server-side user accounts or remote database systems exist, personal data is not collected or stored on external servers.</p>
+      </div>
+
+      <div class="section">
+        <h2>7. Contact Information</h2>
+        <p>For questions or privacy inquiries regarding this policy, please contact:</p>
+        <p><strong>Email:</strong> achmeraglobal@gmail.com<br><strong>Organization:</strong> Battu AI Engineering Team</p>
+      </div>
+
+    </div>
+
+    <footer>
+      &copy; 2026 Battu AI. All rights reserved. Support: achmeraglobal@gmail.com
+    </footer>
+
+  </div>
+
+</body>
+</html>

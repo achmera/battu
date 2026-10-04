@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms and Conditions - Battu AI</title>
+  <meta name="description" content="Terms and Conditions for Battu AI - On-Device Autonomous Mascot Assistant.">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+      background-attachment: fixed;
+      color: #0f172a;
+      line-height: 1.65;
+      padding: clamp(20px, 3vw, 40px) clamp(16px, 3vw, 32px);
+      min-height: 100vh;
+      width: 100%;
+    }
+
+    .bg-glow-1 {
+      position: fixed;
+      top: -120px;
+      right: -120px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+      border-radius: 50%;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .bg-glow-2 {
+      position: fixed;
+      bottom: -150px;
+      left: -150px;
+      width: 550px;
+      height: 550px;
+      background: radial-gradient(circle, rgba(15, 23, 42, 0.06) 0%, rgba(255, 255, 255, 0) 70%);
+      border-radius: 50%;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .wrapper {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .doc-header {
+      margin-bottom: 28px;
+    }
+
+    .doc-header h1 {
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #0f172a;
+      margin-bottom: 10px;
+    }
+
+    .doc-header p {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: #475569;
+      margin-bottom: 14px;
+    }
+
+    .meta-date {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #2563eb;
+      background: rgba(37, 99, 235, 0.08);
+      padding: 4px 12px;
+      border-radius: 20px;
+      border: 1px solid rgba(37, 99, 235, 0.2);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: 18px;
+      padding: clamp(20px, 3vw, 44px);
+      box-shadow: 0 12px 32px -8px rgba(15, 23, 42, 0.06), 0 0 1px rgba(0, 0, 0, 0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .glass-card:hover {
+      box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.1);
+      border-color: rgba(37, 99, 235, 0.3);
+    }
+
+    .section {
+      margin-bottom: 36px;
+    }
+
+    .section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section h2 {
+      font-size: clamp(1.2rem, 3vw, 1.4rem);
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+      letter-spacing: -0.01em;
+    }
+
+    .section p {
+      font-size: 1rem;
+      color: #334155;
+      margin-bottom: 14px;
+    }
+
+    .section ul {
+      margin-left: 20px;
+      margin-bottom: 14px;
+      color: #334155;
+    }
+
+    .section li {
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+
+    .warning-box {
+      background: rgba(239, 246, 255, 0.8);
+      border-left: 4px solid #2563eb;
+      padding: 16px 20px;
+      border-radius: 8px;
+      margin: 16px 0;
+      color: #0f172a;
+      font-size: 0.95rem;
+      border-top: 1px solid rgba(191, 219, 254, 0.6);
+      border-right: 1px solid rgba(191, 219, 254, 0.6);
+      border-bottom: 1px solid rgba(191, 219, 254, 0.6);
+    }
+
+    a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: #1d4ed8;
+    }
+
+    footer {
+      margin-top: 48px;
+      text-align: center;
+      font-size: 0.875rem;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-glow-1"></div>
+  <div class="bg-glow-2"></div>
+
+  <div class="wrapper">
+
+    <div class="doc-header">
+      <h1>Terms & Conditions</h1>
+      <p>Please read these terms carefully prior to utilizing the Battu AI Android application.</p>
+      <div class="meta-date">Last Updated: October 4, 2026</div>
+    </div>
+
+    <div class="glass-card">
+
+      <div class="section">
+        <h2>1. Acceptance of Agreement</h2>
+        <p>By downloading, installing, or accessing <strong>Battu AI</strong>, you agree to comply with and be bound by these Terms and Conditions. If you do not agree with any part of these terms, you must cease using the application immediately.</p>
+      </div>
+
+      <div class="section">
+        <h2>2. Scope of Service</h2>
+        <p>Battu AI is an autonomous, on-device AI mascot and personal assistant designed for Android systems. The software executes artificial intelligence language models (Google Gemma 4 E2B via Google AI Edge LiteRT-LM) and computer vision frameworks (Google MLKit) to deliver conversational AI, screen assistance, visual recognition, and custom mascot animations.</p>
+      </div>
+
+      <div class="section">
+        <h2>3. Artificial Intelligence Disclaimer</h2>
+        <div class="warning-box">
+          <strong>Notice on AI Generated Outputs:</strong> Battu AI utilizes local probabilistic neural network models. Outputs generated by the AI may contain errors, inaccuracies, or unexpected content ("hallucinations").
+        </div>
+        <p>You acknowledge and agree that:</p>
+        <ul>
+          <li>Responses provided by Battu AI should not be relied upon as professional legal, medical, financial, or safety advice.</li>
+          <li>We assume no responsibility or liability for actions taken, decisions made, or reliance placed upon AI-generated content.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>4. User Conduct & Acceptable Use</h2>
+        <p>You agree to use Battu AI in full compliance with applicable laws. You agree NOT to:</p>
+        <ul>
+          <li>Use the application to generate unlawful, defamatory, harassing, or harmful material.</li>
+          <li>Attempt to decompile, reverse-engineer, or extract proprietary software logic or binary model files beyond what is permitted under open-source software licenses.</li>
+          <li>Utilize optional system permissions (such as Accessibility or Notification Listener services) for unauthorized or malicious activities.</li>
+          <li>Manipulate, bypass, or interfere with in-app advertising delivery mechanisms.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>5. Advertising & In-App Rewards</h2>
+        <p>Battu AI incorporates Google AdMob to display advertisements:</p>
+        <ul>
+          <li><strong>Ad Formats:</strong> The software may present banner ads, full-screen interstitial ads, native ads, and rewarded video ads.</li>
+          <li><strong>Virtual Items & Rewards:</strong> Viewing rewarded video advertisements may grant virtual in-app items, bonus tokens, or feature access. Virtual rewards carry no monetary or real-world currency value, are non-transferable, and non-refundable.</li>
+          <li><strong>Ad Integrity:</strong> Users are prohibited from engaging in click fraud, automated interaction scripts, or interfering with ad rendering.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>6. Intellectual Property Rights</h2>
+        <p>The Battu AI brand name, mascot visual design ("Battu", "Ba-2"), graphics, user interface layouts, and source code are owned by Battu AI and protected by intellectual property laws. Third-party libraries and open-weights AI models are governed by their respective open-source license agreements (detailed in our <a href="../licenses/">Licenses</a> section).</p>
+      </div>
+
+      <div class="section">
+        <h2>7. Limitation of Liability</h2>
+        <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, BATTU AI AND ITS DEVELOPERS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES, INCLUDING LOSS OF DATA, DEVICE MALFUNCTION, OR BUSINESS INTERRUPTION ARISING OUT OF THE USE OR INABILITY TO USE THE APPLICATION.</p>
+      </div>
+
+      <div class="section">
+        <h2>8. Disclaimer of Warranties</h2>
+        <p>THE APPLICATION IS PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</p>
+      </div>
+
+      <div class="section">
+        <h2>9. Governing Law & Updates</h2>
+        <p>We reserve the right to revise these Terms and Conditions at any time. Updated terms take effect immediately upon publication within the application or online portal.</p>
+      </div>
+
+      <div class="section">
+        <h2>10. Contact Information</h2>
+        <p>For inquiries regarding these Terms and Conditions, please contact:</p>
+        <p><strong>Email:</strong> achmeraglobal@gmail.com</p>
+      </div>
+
+    </div>
+
+    <footer>
+      &copy; 2026 Battu AI. All rights reserved. Support: achmeraglobal@gmail.com
+    </footer>
+
+  </div>
+
+</body>
+</html>

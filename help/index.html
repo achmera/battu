@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Guide & Help Center - Battu AI</title>
+  <meta name="description" content="User guide and help center for Battu AI - On-Device Autonomous Mascot Assistant.">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+      background-attachment: fixed;
+      color: #0f172a;
+      line-height: 1.65;
+      padding: clamp(20px, 3vw, 40px) clamp(16px, 3vw, 32px);
+      min-height: 100vh;
+      width: 100%;
+    }
+
+    .bg-glow-1 {
+      position: fixed;
+      top: -120px;
+      right: -120px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+      border-radius: 50%;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .bg-glow-2 {
+      position: fixed;
+      bottom: -150px;
+      left: -150px;
+      width: 550px;
+      height: 550px;
+      background: radial-gradient(circle, rgba(15, 23, 42, 0.06) 0%, rgba(255, 255, 255, 0) 70%);
+      border-radius: 50%;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .wrapper {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .doc-header {
+      margin-bottom: 32px;
+    }
+
+    .doc-header h1 {
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+
+    .doc-header p {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: #475569;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      padding: clamp(20px, 3vw, 32px);
+      box-shadow: 0 12px 32px -8px rgba(15, 23, 42, 0.06), 0 0 1px rgba(0, 0, 0, 0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      margin-bottom: 24px;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.1);
+      border-color: rgba(37, 99, 235, 0.3);
+    }
+
+    .feature-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 6px;
+    }
+
+    .feature-card p {
+      font-size: 0.9rem;
+      color: #475569;
+    }
+
+    .section-title {
+      font-size: clamp(1.2rem, 3vw, 1.4rem);
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+      letter-spacing: -0.01em;
+    }
+
+    .steps-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .step-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      background: #2563eb;
+      color: #ffffff;
+      font-size: 0.85rem;
+      font-weight: 700;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .step-content h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+
+    .step-content p {
+      font-size: 0.925rem;
+      color: #475569;
+    }
+
+    .chip-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .chip {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.85rem;
+      background: rgba(15, 23, 42, 0.05);
+      color: #0f172a;
+      padding: 6px 14px;
+      border-radius: 8px;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+    }
+
+    .chip span {
+      color: #2563eb;
+      font-weight: 700;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .faq-item {
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      border-radius: 12px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.6);
+    }
+
+    .faq-btn {
+      width: 100%;
+      background: transparent;
+      border: none;
+      padding: 16px 20px;
+      text-align: left;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #0f172a;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-ans {
+      display: none;
+      padding: 16px 20px;
+      font-size: 0.925rem;
+      color: #475569;
+      border-top: 1px solid rgba(226, 232, 240, 0.8);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    footer {
+      margin-top: 48px;
+      text-align: center;
+      font-size: 0.875rem;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-glow-1"></div>
+  <div class="bg-glow-2"></div>
+
+  <div class="wrapper">
+
+    <div class="doc-header">
+      <h1>User Guide & Help Center</h1>
+      <p>System documentation, operation steps, and mascot interaction guidelines.</p>
+    </div>
+
+    <div class="grid-4">
+      <div class="glass-card feature-card" style="margin-bottom:0;">
+        <h3>Floating Mascot</h3>
+        <p>Overlay companion floating above Android applications.</p>
+      </div>
+      <div class="glass-card feature-card" style="margin-bottom:0;">
+        <h3>On-Device Neural Engine</h3>
+        <p>Gemma 4 E2B & Gemma 3 inference on NPU/GPU hardware.</p>
+      </div>
+      <div class="glass-card feature-card" style="margin-bottom:0;">
+        <h3>Custom Palette</h3>
+        <p>Customizable body and shadow palettes including Royal Blue (#2563EB).</p>
+      </div>
+      <div class="glass-card feature-card" style="margin-bottom:0;">
+        <h3>MLKit Vision</h3>
+        <p>Local computer vision, optical character recognition, and object detection.</p>
+      </div>
+    </div>
+
+    <div class="glass-card">
+      <div class="section-title">Application Operation</div>
+      
+      <div class="steps-list">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>Enable Foreground Service</h4>
+            <p>Activate the mascot service from the main application dashboard. A persistent notification keeps the overlay active.</p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>Interact via Text or Voice</h4>
+            <p>Tap the floating mascot or use local voice recording. The mascot displays a thinking state (O-O) while rendering streamed responses.</p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>Stage 1 vs. Stage 2 Web Search</h4>
+            <p>Stage 1 provides instant local AI answers. If real-time information is required, Stage 2 connects to live web search endpoints.</p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4>Personality Customization</h4>
+            <p>Choose between Friendly Battu, Sarcastic Ba-2, or define custom personality traits in the Personality screen.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="glass-card">
+      <div class="section-title">Mascot Expressions Reference</div>
+      <p style="font-size:0.925rem; color:#475569; margin-bottom:14px;">The mascot automatically selects facial expressions based on conversation context:</p>
+      
+      <div class="chip-container">
+        <div class="chip">Happy: <span>OuO</span></div>
+        <div class="chip">Excited / Laughing: <span>OwO</span></div>
+        <div class="chip">Thinking: <span>O-O</span></div>
+        <div class="chip">Curious / Surprised: <span>OoO</span></div>
+        <div class="chip">Shock: <span>O_O</span></div>
+        <div class="chip">Worried / Sad: <span>OnO</span></div>
+        <div class="chip">Confused: <span>@-@</span></div>
+        <div class="chip">Angry: <span>O-O*</span></div>
+        <div class="chip">Shy: <span>#O-O#</span></div>
+        <div class="chip">Kiss: <span>O3O</span></div>
+        <div class="chip">Disappointed: <span>-_-</span></div>
+      </div>
+    </div>
+
+    <div class="glass-card">
+      <div class="section-title">Frequently Asked Questions</div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            <span>Does Battu AI require an active internet connection?</span>
+            <span>+</span>
+          </button>
+          <div class="faq-ans">
+            No. Battu AI processes conversations and computer vision 100% locally on your smartphone. An internet connection is only used when performing Stage 2 live web searches.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            <span>How do I modify mascot colors?</span>
+            <span>+</span>
+          </button>
+          <div class="faq-ans">
+            Open the main app, navigate to Mascot Customization, and select body and shadow color combinations including White, Royal Blue (#2563EB), Amber, Green, and Slate.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            <span>How do I hide the floating mascot?</span>
+            <span>+</span>
+          </button>
+          <div class="faq-ans">
+            Drag the mascot to any position on your screen. To disable the mascot overlay completely, tap Stop Service in the notification shade or toggle off the service in the main dashboard.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      &copy; 2026 Battu AI. All rights reserved. Support: achmeraglobal@gmail.com
+    </footer>
+
+  </div>
+
+  <script>
+    function toggleFaq(btn) {
+      const ans = btn.nextElementSibling;
+      const indicator = btn.querySelector('span:last-child');
+      if (ans.style.display === 'block') {
+        ans.style.display = 'none';
+        indicator.textContent = '+';
+      } else {
+        ans.style.display = 'block';
+        indicator.textContent = '-';
+      }
+    }
+  </script>
+
+</body>
+</html>

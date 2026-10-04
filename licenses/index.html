@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open Source Licenses - Battu AI</title>
+  <meta name="description" content="Open Source Licenses and Attributions for Battu AI.">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+      background-attachment: fixed;
+      color: #0f172a;
+      line-height: 1.65;
+      padding: clamp(20px, 3vw, 40px) clamp(16px, 3vw, 32px);
+      min-height: 100vh;
+      width: 100%;
+    }
+
+    .bg-glow-1 {
+      position: fixed;
+      top: -120px;
+      right: -120px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+      border-radius: 50%;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .bg-glow-2 {
+      position: fixed;
+      bottom: -150px;
+      left: -150px;
+      width: 550px;
+      height: 550px;
+      background: radial-gradient(circle, rgba(15, 23, 42, 0.06) 0%, rgba(255, 255, 255, 0) 70%);
+      border-radius: 50%;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .wrapper {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .doc-header {
+      margin-bottom: 28px;
+    }
+
+    .doc-header h1 {
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+
+    .doc-header p {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: #475569;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 14px 20px;
+      font-size: 0.95rem;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      color: #0f172a;
+      margin-bottom: 24px;
+      outline: none;
+      box-shadow: 0 10px 25px -10px rgba(15, 23, 42, 0.05);
+      transition: all 0.25s ease;
+    }
+
+    .search-input:focus {
+      border-color: #2563eb;
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+    }
+
+    .license-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: 16px;
+      padding: clamp(20px, 3vw, 28px);
+      box-shadow: 0 12px 32px -8px rgba(15, 23, 42, 0.06), 0 0 1px rgba(0, 0, 0, 0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.1);
+      border-color: rgba(37, 99, 235, 0.3);
+    }
+
+    .license-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .lib-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .lib-pkg {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.8rem;
+      color: #64748b;
+      display: block;
+      margin-top: 2px;
+    }
+
+    .license-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      background: rgba(37, 99, 235, 0.08);
+      color: #2563eb;
+      padding: 4px 10px;
+      border-radius: 20px;
+      border: 1px solid rgba(37, 99, 235, 0.2);
+    }
+
+    .lib-desc {
+      font-size: 0.95rem;
+      color: #475569;
+      margin-bottom: 14px;
+    }
+
+    .toggle-btn {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(203, 213, 225, 0.8);
+      color: #0f172a;
+      font-size: 0.825rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .toggle-btn:hover {
+      background: #ffffff;
+      border-color: #2563eb;
+      color: #2563eb;
+    }
+
+    .license-text {
+      display: none;
+      margin-top: 14px;
+      background: rgba(248, 250, 252, 0.9);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      border-radius: 8px;
+      padding: 16px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.8rem;
+      color: #334155;
+      white-space: pre-wrap;
+      max-height: 240px;
+      overflow-y: auto;
+    }
+
+    footer {
+      margin-top: 48px;
+      text-align: center;
+      font-size: 0.875rem;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-glow-1"></div>
+  <div class="bg-glow-2"></div>
+
+  <div class="wrapper">
+
+    <div class="doc-header">
+      <h1>Open Source Licenses</h1>
+      <p>Third-party libraries, open-weights models, and open-source software attributions.</p>
+    </div>
+
+    <input type="text" id="searchInput" class="search-input" placeholder="Search libraries or licenses..." onkeyup="filterLicenses()">
+
+    <div class="license-list" id="licenseList">
+
+      <!-- Item 1: Google AI Edge LiteRT-LM SDK -->
+      <div class="glass-card license-card" data-search="Google AI Edge LiteRT-LM litertlm-android Apache 2.0 local llm execution">
+        <div class="license-meta">
+          <div>
+            <div class="lib-title">Google AI Edge LiteRT-LM SDK</div>
+            <span class="lib-pkg">com.google.ai.edge.litertlm:litertlm-android:0.16.1</span>
+          </div>
+          <span class="license-tag">Apache 2.0</span>
+        </div>
+        <p class="lib-desc">Google AI Edge runtime for executing LiteRT-LM and GGUF neural network models directly on mobile NPU/GPU hardware.</p>
+        <button class="toggle-btn" onclick="toggleLicenseText(this)">View License Text</button>
+        <div class="license-text">Apache License
+Version 2.0, January 2004
+http://www.apache.org/licenses/
+
+Copyright 2026 Google LLC
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0</div>
+      </div>
+
+      <!-- Item 2: Gemma Model Family -->
+      <div class="glass-card license-card" data-search="Gemma 4 E2B Gemma 3 Google DeepMind Model Terms Open License">
+        <div class="license-meta">
+          <div>
+            <div class="lib-title">Gemma Language Models (Gemma 4 E2B & Gemma 3)</div>
+            <span class="lib-pkg">Google DeepMind Open Weights</span>
+          </div>
+          <span class="license-tag">Gemma Terms of Use</span>
+        </div>
+        <p class="lib-desc">Open-weights lightweight language models developed by Google DeepMind.</p>
+        <button class="toggle-btn" onclick="toggleLicenseText(this)">View License Text</button>
+        <div class="license-text">GEMMA TERMS OF USE
+
+Gemma is provided by Google under the Gemma Terms of Use.
+You may use, modify, and distribute Gemma weights and derivatives in accordance with Google's Responsible Use Guidelines.
+
+For full license terms, visit: https://ai.google.dev/gemma/terms</div>
+      </div>
+
+      <!-- Item 3: Google MLKit SDKs -->
+      <div class="glass-card license-card" data-search="Google MLKit Text Recognition Object Detection Face Detection Image Labeling OCR Apache 2.0">
+        <div class="license-meta">
+          <div>
+            <div class="lib-title">Google MLKit Computer Vision SDKs</div>
+            <span class="lib-pkg">com.google.mlkit:text-recognition, object-detection, face-detection, image-labeling</span>
+          </div>
+          <span class="license-tag">Apache 2.0</span>
+        </div>
+        <p class="lib-desc">On-device machine learning APIs for text recognition (OCR), object tracking, face detection, and image processing.</p>
+        <button class="toggle-btn" onclick="toggleLicenseText(this)">View License Text</button>
+        <div class="license-text">Copyright 2026 Google LLC
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0</div>
+      </div>
+
+      <!-- Item 4: AndroidX & Jetpack Libraries -->
+      <div class="glass-card license-card" data-search="AndroidX Core KTX AppCompat Material Constraints Lifecycle Jetpack Apache 2.0">
+        <div class="license-meta">
+          <div>
+            <div class="lib-title">AndroidX & Jetpack Libraries</div>
+            <span class="lib-pkg">androidx.core:core-ktx, appcompat, material, constraintlayout, lifecycle</span>
+          </div>
+          <span class="license-tag">Apache 2.0</span>
+        </div>
+        <p class="lib-desc">Android Jetpack core system components, UI compatibility layers, and lifecycle architecture components.</p>
+        <button class="toggle-btn" onclick="toggleLicenseText(this)">View License Text</button>
+        <div class="license-text">Copyright (C) 2026 The Android Open Source Project
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0</div>
+      </div>
+
+      <!-- Item 5: Kotlin Standard Library & Coroutines -->
+      <div class="glass-card license-card" data-search="Kotlin JetBrains Standard Library Coroutines Apache 2.0">
+        <div class="license-meta">
+          <div>
+            <div class="lib-title">Kotlin Standard Library & Coroutines</div>
+            <span class="lib-pkg">org.jetbrains.kotlin:kotlin-stdlib</span>
+          </div>
+          <span class="license-tag">Apache 2.0</span>
+        </div>
+        <p class="lib-desc">Kotlin standard library and coroutines concurrency framework developed by JetBrains.</p>
+        <button class="toggle-btn" onclick="toggleLicenseText(this)">View License Text</button>
+        <div class="license-text">Copyright 2010-2026 JetBrains s.r.o. and Kotlin Programming Language contributors.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0</div>
+      </div>
+
+      <!-- Item 6: Google Play Services AdMob -->
+      <div class="glass-card license-card" data-search="Google Play Services Ads AdMob gms Terms of Service">
+        <div class="license-meta">
+          <div>
+            <div class="lib-title">Google Mobile Ads SDK (AdMob)</div>
+            <span class="lib-pkg">com.google.android.gms:play-services-ads:23.0.0</span>
+          </div>
+          <span class="license-tag">Google APIs Terms</span>
+        </div>
+        <p class="lib-desc">Google Mobile Ads SDK for serving advertisements.</p>
+        <button class="toggle-btn" onclick="toggleLicenseText(this)">View License Text</button>
+        <div class="license-text">Subject to Google APIs Terms of Service: https://developers.google.com/terms
+and Google Mobile Ads SDK Terms: https://developers.google.com/admob/terms</div>
+      </div>
+
+    </div>
+
+    <footer>
+      &copy; 2026 Battu AI. All rights reserved. Support: achmeraglobal@gmail.com
+    </footer>
+
+  </div>
+
+  <script>
+    function toggleLicenseText(btn) {
+      const textBlock = btn.nextElementSibling;
+      if (textBlock.style.display === 'block') {
+        textBlock.style.display = 'none';
+        btn.textContent = 'View License Text';
+      } else {
+        textBlock.style.display = 'block';
+        btn.textContent = 'Hide License Text';
+      }
+    }
+
+    function filterLicenses() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      const cards = document.querySelectorAll('.license-card');
+
+      cards.forEach(card => {
+        const searchData = card.getAttribute('data-search').toLowerCase();
+        if (searchData.includes(query)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
